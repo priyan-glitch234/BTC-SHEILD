@@ -1,0 +1,29 @@
+{
+  "model_name": "Behavioral_Isolation_Forest_Global",
+  "version": "2.4.0",
+  "n_estimators": 100,
+  "max_samples": 256,
+  "contamination": 0.15,
+  "features": [
+    "amount_btc",
+    "fee_ratio",
+    "num_inputs",
+    "num_outputs",
+    "is_unusual_port",
+    "cross_border_network_flag"
+  ],
+  "excluded_features": [
+    "geo_country",
+    "india_state",
+    "india_city",
+    "nationality",
+    "wallet_owner_identity"
+  ],
+  "baselines": {
+    "avg_amount_btc": 2.0196,
+    "avg_fee_ratio": 0.004809,
+    "avg_inputs": 2.7,
+    "avg_outputs": 2.77
+  },
+  "training_timestamp": "2026-08-31T07:42:05.124238Z"
+}

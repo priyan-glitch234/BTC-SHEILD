@@ -1,0 +1,8 @@
+{
+  "name": "Remix BTC-SHIELD — AI-Powered Bitcoin Transaction Traffic Monitor",
+  "description": "Bitcoin Transaction Intelligence with an India Priority Lens - Anomaly Detection & Network Correlation",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

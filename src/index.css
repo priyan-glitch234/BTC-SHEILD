@@ -1,0 +1,298 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* =========================================================================
+     BTC-SHIELD ENTERPRISE SOC DESIGN SYSTEM TOKENS
+     - Canvas Background: #0B0F14 (Dark Charcoal/Navy)
+     - Panel Surface: #111821 (Lighter Dark Surface)
+     - Sub-Surface / Inset: #0E141C (Header bars, inputs, nested containers)
+     - Interactive Hover: #17212D (Row / Button Hover)
+     - Elevated Surface: #1C2836
+     - Subtle 1px Borders: #1D2836 (Standard) / #151F2B (Subtle) / #2A3A4D (Interactive)
+     - Primary Accent: Restrained Cyan/Sky (#0EA5E9)
+     - Zero Neon Glow / Zero AI Slop Gradients
+     ========================================================================= */
+
+  .surface-canvas {
+    background-color: #0B0F14;
+  }
+
+  .surface-panel {
+    background-color: #111821;
+    border: 1px solid #1D2836;
+  }
+
+  .surface-subtle {
+    background-color: #0E141C;
+    border: 1px solid #1D2836;
+  }
+
+  .surface-elevated {
+    background-color: #17212D;
+    border: 1px solid #2A3A4D;
+  }
+
+  /* Card and Panel System */
+  .soc-card {
+    background-color: #111821;
+    border: 1px solid #1D2836;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .soc-card-header {
+    background-color: #0E141C;
+    border-bottom: 1px solid #1D2836;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Button System */
+  .soc-btn-primary {
+    background-color: #0284C7;
+    color: #FFFFFF;
+    border: 1px solid rgba(14, 165, 233, 0.4);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 12px;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .soc-btn-primary:hover {
+    background-color: #0EA5E9;
+    border-color: rgba(14, 165, 233, 0.6);
+  }
+
+  .soc-btn-secondary {
+    background-color: #17212D;
+    color: #E2E8F0;
+    border: 1px solid #2A3A4D;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 12px;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .soc-btn-secondary:hover {
+    background-color: #1E2B3B;
+    border-color: #384F68;
+    color: #FFFFFF;
+  }
+
+  .soc-btn-danger {
+    background-color: rgba(244, 63, 94, 0.12);
+    color: #FDA4AF;
+    border: 1px solid rgba(225, 29, 72, 0.4);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 12px;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .soc-btn-danger:hover {
+    background-color: rgba(244, 63, 94, 0.22);
+    border-color: rgba(225, 29, 72, 0.6);
+  }
+
+  .soc-btn-ghost {
+    background-color: transparent;
+    color: #94A3B8;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 10px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .soc-btn-ghost:hover {
+    background-color: #17212D;
+    color: #F1F5F9;
+  }
+
+  /* Form Inputs System */
+  .soc-input {
+    background-color: #0E141C;
+    color: #F1F5F9;
+    border: 1px solid #1D2836;
+    border-radius: 6px;
+    font-size: 12px;
+    padding: 6px 12px;
+    outline: none;
+    transition: border-color 0.15s ease;
+    width: 100%;
+  }
+  .soc-input::placeholder {
+    color: #64748B;
+  }
+  .soc-input:focus {
+    border-color: #0284C7;
+  }
+
+  /* Badge Standards */
+  .badge-critical {
+    background-color: rgba(244, 63, 94, 0.12);
+    color: #FDA4AF;
+    border: 1px solid rgba(225, 29, 72, 0.5);
+    font-family: monospace;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .badge-warning {
+    background-color: rgba(245, 158, 11, 0.10);
+    color: #FCD34D;
+    border: 1px solid rgba(217, 119, 6, 0.5);
+    font-family: monospace;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .badge-healthy {
+    background-color: rgba(34, 197, 94, 0.10);
+    color: #86EFAC;
+    border: 1px solid rgba(22, 163, 74, 0.4);
+    font-family: monospace;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .badge-info {
+    background-color: rgba(14, 165, 233, 0.10);
+    color: #7DD3FC;
+    border: 1px solid rgba(2, 132, 199, 0.4);
+    font-family: monospace;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .badge-neutral {
+    background-color: #0E141C;
+    color: #94A3B8;
+    border: 1px solid #1D2836;
+    font-family: monospace;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* Aliased Legacy Classes to De-Slop Existing Page Components */
+  .glass-card {
+    background-color: #111821;
+    border: 1px solid #1D2836;
+    border-radius: 6px;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  .glass-card-hover {
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .glass-card-hover:hover {
+    background-color: #151E2A;
+    border-color: #2A3A4D;
+  }
+
+  .glass-panel-accent {
+    background-color: #111821;
+    border: 1px solid #1D2836;
+    border-radius: 6px;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Definitively strip all glowing and neon effects */
+  .cyber-glow-emerald,
+  .cyber-glow-rose,
+  .cyber-glow-cyan {
+    box-shadow: none !important;
+  }
+}
+
+/* High-Density SOC Dark Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0F14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1D2836;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2A3A4D;
+}
+
+/* Custom subtle scrollbar container utility */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #1D2836;
+  border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #2A3A4D;
+}

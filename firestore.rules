@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Open access for BTC-SHIELD real-time transactions & alerts intelligence
+    match /transactions/{transactionId} {
+      allow read, write: if true;
+    }
+    match /alerts/{alertId} {
+      allow read, write: if true;
+    }
+    match /investigations/{investigationId} {
+      allow read, write: if true;
+    }
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
