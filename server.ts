@@ -26,7 +26,15 @@ async function startServer() {
     const vite = await createViteServer({
       server: {
         middlewareMode: true,
-        hmr: { server: httpServer },
+        hmr: {
+          server: httpServer,
+          // The preview is served over HTTPS behind a reverse proxy that
+          // terminates TLS on the default port, so the HMR client must be
+          // told to connect via wss on 443 rather than inferring ws on the
+          // internal port (3000), otherwise the socket closes immediately.
+          protocol: 'wss',
+          clientPort: 443,
+        },
       },
       appType: 'spa',
     });
